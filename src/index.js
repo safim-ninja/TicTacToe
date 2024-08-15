@@ -4,12 +4,23 @@ import './index.css';
 import Navbar from './Partials/Navbar';
 import reportWebVitals from './reportWebVitals';
 import TicTacToe from './TicTacToe';
-
+import Home from './Home';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const router = createBrowserRouter([
+  { 
+    path: '/',
+    element: <Home />,
+  },
+  {
+    path: "/tic-tac-toe",
+    element: <TicTacToe />,
+  },
+])
 root.render(
   <React.StrictMode>
     <Navbar />
-    <TicTacToe />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
